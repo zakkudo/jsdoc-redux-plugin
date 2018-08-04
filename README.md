@@ -65,4 +65,7 @@ Added tags include
 - `@reduxActionType`
 - `@reduxReducer`
 
+Includes typedefs for
 
+- `Redux` namespace
+- `Redux.Action` typedef to generically descript an action object

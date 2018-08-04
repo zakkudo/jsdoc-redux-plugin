@@ -1,3 +1,5 @@
+const path = require('path');
+
 /**
  * Add redux tag suppor to jsdoc
  */
@@ -18,5 +20,10 @@ exports.defineTags = function(dictionary) {
 exports.handlers = {
   newDoclet: function(e) {
     redux.newDocletHandler(e);
+  },
+  parseBegin: function(e) {
+      const files = e.sourcefiles = e.sourcefiles || [];
+
+      files.unshift(path.resolve(__dirname, 'typedefs.js'));
   }
 }
