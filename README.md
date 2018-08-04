@@ -2,10 +2,18 @@
 
 Adds tags to help document redux functionality without having to copy-paste text around and allowing disallowing undefined tags.
 
-Install with
+Install with:
 
 ```sh
 yarn add --dev @zakkudo/jsdoc-redux-plugin
+```
+
+Add to your jsdoc config with:
+
+```js
+    "plugins": [
+        "@zakkudo/jsdoc-redux-plugin"
+    ],
 ```
 
 Tag your reducers this way:
@@ -56,3 +64,5 @@ Added tags include
 - `@reduxActionScope`
 - `@reduxActionType`
 - `@reduxReducer`
+
+
