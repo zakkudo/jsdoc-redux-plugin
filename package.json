@@ -1,6 +1,6 @@
 {
   "name": "@zakkudo/jsdoc-redux-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Adds custom tags to help document redux to help document the functionality",
   "keywords": [
     "redux",
@@ -8,6 +8,7 @@
     "documentation"
   ],
   "main": "src/index.js",
+  "repository": "github:zakkudo/jsdoc-redux-plugin",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "eslint": "^4.19.1",
