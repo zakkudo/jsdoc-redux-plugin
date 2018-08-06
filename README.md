@@ -10,6 +10,9 @@ Why use this?
 - Includes links to all of the documentation for the different types on the
   official site
 - Includes short official descriptions from the official site inline
+- Prefills attribues for reducers and action creators to reduce repetitive
+  typing using custom tags
+- Attributes are still overridable even if prefilled
 
 Install with:
 
@@ -29,7 +32,8 @@ Added tags include
 
 - `@redux`
 - `@reduxActionScope`
-- `@reduxActionType`
+- `@reduxActionCreator`
+- `@reduxReducer` * NOTE - You must use prevousState, action as the function argument names
 
 Includes typedefs for
 
@@ -44,12 +48,19 @@ Includes typedefs for
   /**
    * Application reducer.
    * @redux
-   * @type {Redux.Reducer}
-   * @param {Redux.Store} state - The current redux state
-   * @param {Redux.Action} action - A redux action
-   * @return {Redux.Store} The updated redux state
+   * @reduceReducer
    */
-  export default function reducer(state = defaultState, action) {}
+  export default function reducer(previousState = defaultState, action) {}
+```
+**Example** *(Override one of the default descriptions)*  
+```js
+  /**
+   * Application reducer.
+   * @redux
+   * @reduceReducer
+   * @param {Redux.Store} previousState - We don't want the default description for this argument
+   */
+  export default function reducer(previousState = defaultState, action) {}
 ```
 **Example** *(Tag your actions)*  
 ```js
@@ -61,11 +72,10 @@ Includes typedefs for
    */
    export default {
      /**
+      * Sets the router match information to the store.
       * @redux
-      * @reduxActionType SET_ROUTER_MATCH
-      * @type {Redux.ActionCreator}
+      * @reduxActionCreator SET_ROUTER_MATCH
       * @param {Immutable.Map} match - the current route match information
-      * @return {Redux.Action} The generated action
      */
     setRouterMatch(match) {
            return {
@@ -74,7 +84,7 @@ Includes typedefs for
            };
        },
     /**
-     * Possible global actions for the application.
+     * @redux
      * @type {Redux.ActionType}
      */
     SET_ROUTER_MATCH: '@APPLICATION/SET_ROUTER_MATCH'

@@ -16,8 +16,7 @@
  * actions sent to the store. Remember that actions only describe what
  * happened, but don't describe how the application's state changes.
  * @memberof Redux
- * @typedef Redux.Reducer
- * @type {Function}
+ * @callback Redux.Reducer
  * @param {Redux.Store} previousState - The current state
  * @param {Redux.Action} action - An action to execute to update the store
  * @return {Redux.Store} The next state
@@ -56,8 +55,8 @@
  *   }
  * }
  * @memberof Redux
- * @typedef Redux.ActionCreator
- * @type {Function}
+ * @callback Redux.ActionCreator
+ * @return {Redux.Action} The generated Redux action
  * @see {@link https://redux.js.org/basics/actions#action-creators}
  */
 
