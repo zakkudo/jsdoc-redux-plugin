@@ -39,7 +39,7 @@ const reduxActionCreator = require('./reduxActionCreatorParam');
  * - `@redux`
  * - `@reduxActionScope`
  * - `@reduxActionCreator`
- * - `@reduxReducer` * NOTE - You must use prevousState, action as the function argument names
+ * - `@reduxReducer` * NOTE - You must use previousState, action as the function argument names
  *
  * Includes typedefs for
  *
