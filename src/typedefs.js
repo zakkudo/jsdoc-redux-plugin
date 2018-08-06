@@ -12,6 +12,19 @@
  */
 
 /**
+ * Reducers specify how the application's state changes in response to
+ * actions sent to the store. Remember that actions only describe what
+ * happened, but don't describe how the application's state changes.
+ * @memberof Redux
+ * @typedef Redux.Reducer
+ * @type {Function}
+ * @param {Redux.Store} previousState - The current state
+ * @param {Redux.Action} action - An action to execute to update the store
+ * @return {Redux.Store} The next state
+ * @see {@link https://redux.js.org/basics/reducers}
+ */
+
+/**
  * Actions are payloads of information that send data from your application
  * to your store. They are the only source of information for the store. You
  * send them to the store using <code>store.dispatch()</code>.

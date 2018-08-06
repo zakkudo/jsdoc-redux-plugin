@@ -2,9 +2,7 @@ const path = require('path');
 
 const redux = require('./reduxParam');
 const reduxActionType = require('./reduxActionTypeParam');
-const reduxActionCreator = require('./reduxActionCreatorParam');
 const reduxActionScope = require('./reduxActionScopeParam');
-const reduxReducer = require('./reduxReducerParam');
 
 
 /**
@@ -35,10 +33,8 @@ const reduxReducer = require('./reduxReducerParam');
  * Added tags include
  *
  * - `@redux`
- * - `@reduxActionCreator`
  * - `@reduxActionScope`
  * - `@reduxActionType`
- * - `@reduxReducer`
  *
  * Includes typedefs for
  *
@@ -46,12 +42,13 @@ const reduxReducer = require('./reduxReducerParam');
  * - `Redux.Action`
  * - `Redux.ActionType`
  * - `Redux.ActionCreator`
+ * - `Redux.Reducer`
  *
  * @example <caption>Tag your reducers</caption>
  *   /**
  *    * Application reducer.
  *    * &at;redux
- *    * &at;reduxReducer
+ *    * &at;type {Redux.Reducer}
  *    * &at;param {Redux.Store} state - The current redux state
  *    * &at;param {Redux.Action} action - A redux action
  *    * &at;return {Redux.Store} The updated redux state
@@ -79,7 +76,7 @@ const reduxReducer = require('./reduxReducerParam');
  *                match,
  *            };
  *        },
- *     /*
+ *     /**
  *      * Possible global actions for the application.
  *      * &at;type {Redux.ActionType}
  *      *\/
@@ -101,7 +98,5 @@ exports.handlers = {
 exports.defineTags = function(dictionary) {
     redux.defineTag(dictionary);
     reduxActionType.defineTag(dictionary);
-    reduxActionCreator.defineTag(dictionary);
-    reduxReducer.defineTag(dictionary);
     reduxActionScope.defineTag(dictionary);
 };

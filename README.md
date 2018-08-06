@@ -28,10 +28,8 @@ Add to your jsdoc config with:
 Added tags include
 
 - `@redux`
-- `@reduxActionCreator`
 - `@reduxActionScope`
 - `@reduxActionType`
-- `@reduxReducer`
 
 Includes typedefs for
 
@@ -39,13 +37,14 @@ Includes typedefs for
 - `Redux.Action`
 - `Redux.ActionType`
 - `Redux.ActionCreator`
+- `Redux.Reducer`
 
 **Example** *(Tag your reducers)*  
 ```js
   /**
    * Application reducer.
    * @redux
-   * @reduxReducer
+   * @type {Redux.Reducer}
    * @param {Redux.Store} state - The current redux state
    * @param {Redux.Action} action - A redux action
    * @return {Redux.Store} The updated redux state
@@ -74,7 +73,7 @@ Includes typedefs for
                match,
            };
        },
-    /*
+    /**
      * Possible global actions for the application.
      * @type {Redux.ActionType}
      */
