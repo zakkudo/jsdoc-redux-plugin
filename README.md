@@ -1,10 +1,19 @@
-# jsdoc-redux-plugin
+<a name="module_jsdoc-redux-plugin"></a>
 
-Adds tags to help document redux functionality without having to copy-paste text around and allowing disallowing undefined tags.
+## jsdoc-redux-plugin
+Make working with [Redux](https://redux.js.org) types in [jsdoc](http://usejsdoc.org/) enjoyable.
+
+Why use this?
+
+- Generates standard types for jsdoc so you can set `allowUnknownTags`
+  to `false`
+- Includes links to all of the documentation for the different types on the
+  official site
+- Includes short official descriptions from the official site inline
 
 Install with:
 
-```sh
+```console
 yarn add --dev @zakkudo/jsdoc-redux-plugin
 ```
 
@@ -14,47 +23,6 @@ Add to your jsdoc config with:
     "plugins": [
         "@zakkudo/jsdoc-redux-plugin"
     ],
-```
-
-Tag your reducers this way:
-
-```js
-  /**
-   * Application reducer.
-   * @redux
-   * @reduxReducer
-   * @param {Object} state - The current redux state
-   * @param {Redux.Action} action - A redux action
-   * @return {Object} The updated redux state
-   */
-  export default function reducer(state = defaultState, action) {]
-```
-
-Document your actions like this:
-
-```js
-/**
- * Possible global actions for the application.
- * @redux
- * @reduxActionScope APPLICATION
- * @module Application/actions
- */
-export default new Actions({
-    /**
-     * The payload will be on the <code>request</code> property.
-     * @redux
-     * @reduxActionCreator
-     * @reduxActionType REQUEST_PAGE_RESOLVE
-     * @param {Immutable.Map} match - The current route match information
-     * @return {Redux.Action} The generated action
-    */
-    setRouterMatch(match) {
-        return {
-            type: 'SET_ROUTER_MATCH',
-            match,
-        };
-    }
-}
 ```
 
 Added tags include
@@ -67,5 +35,49 @@ Added tags include
 
 Includes typedefs for
 
-- `Redux` namespace
-- `Redux.Action` typedef to generically descript an action object
+- `Redux`
+- `Redux.Action`
+- `Redux.ActionType`
+- `Redux.ActionCreator`
+
+**Example** *(Tag your reducers)*  
+```js
+  /**
+   * Application reducer.
+   * @redux
+   * @reduxReducer
+   * @param {Redux.Store} state - The current redux state
+   * @param {Redux.Action} action - A redux action
+   * @return {Redux.Store} The updated redux state
+   */
+  export default function reducer(state = defaultState, action) {}
+```
+**Example** *(Tag your actions)*  
+```js
+  /**
+   * Possible global actions for the application.
+   * @redux
+   * @reduxActionScope APPLICATION
+   * @module Application/actions
+   */
+   export default {
+     /**
+      * @redux
+      * @reduxActionType SET_ROUTER_MATCH
+      * @type {Redux.ActionCreator}
+      * @param {Immutable.Map} match - the current route match information
+      * @return {Redux.Action} The generated action
+     */
+    setRouterMatch(match) {
+           return {
+               type: '@APPLICATION/SET_ROUTER_MATCH',
+               match,
+           };
+       },
+    /*
+     * Possible global actions for the application.
+     * @type {Redux.ActionType}
+     */
+    SET_ROUTER_MATCH: '@APPLICATION/SET_ROUTER_MATCH'
+  }
+```

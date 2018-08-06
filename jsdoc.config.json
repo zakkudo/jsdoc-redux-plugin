@@ -1,0 +1,19 @@
+{
+	"source": {
+        "include": "src/index.js"
+	},
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "plugins": [
+        "plugins/markdown",
+        "src/index"
+    ],
+    "opts": {
+        "destination": "./documentation",
+        "recurse": true,
+        "encoding": "utf8"
+    }
+}

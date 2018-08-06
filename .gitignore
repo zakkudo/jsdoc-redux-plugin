@@ -1,3 +1,6 @@
 node_modules
+*.swo
+documentation
 coverage
 *.swp
+yarn-error.log
