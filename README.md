@@ -48,7 +48,7 @@ Includes typedefs for
   /**
    * Application reducer.
    * @redux
-   * @reduceReducer
+   * @reduxReducer
    */
   export default function reducer(previousState = defaultState, action) {}
 ```
@@ -57,7 +57,7 @@ Includes typedefs for
   /**
    * Application reducer.
    * @redux
-   * @reduceReducer
+   * @reduxReducer
    * @param {Redux.Store} previousState - We don't want the default description for this argument
    */
   export default function reducer(previousState = defaultState, action) {}
@@ -84,7 +84,6 @@ Includes typedefs for
            };
        },
     /**
-     * @redux
      * @type {Redux.ActionType}
      */
     SET_ROUTER_MATCH: '@APPLICATION/SET_ROUTER_MATCH'

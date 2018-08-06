@@ -53,7 +53,7 @@ const reduxActionCreator = require('./reduxActionCreatorParam');
  *   /**
  *    * Application reducer.
  *    * @redux
- *    * @reduceReducer
+ *    * @reduxReducer
  *    *\/
  *   export default function reducer(previousState = defaultState, action) {}
  *
@@ -61,7 +61,7 @@ const reduxActionCreator = require('./reduxActionCreatorParam');
  *   /**
  *    * Application reducer.
  *    * @redux
- *    * @reduceReducer
+ *    * @reduxReducer
  *    * @param {Redux.Store} previousState - We don't want the default description for this argument
  *    *\/
  *   export default function reducer(previousState = defaultState, action) {}
@@ -88,7 +88,6 @@ const reduxActionCreator = require('./reduxActionCreatorParam');
  *            };
  *        },
  *     /**
- *      * &at;redux
  *      * &at;type {Redux.ActionType}
  *      *\/
  *     SET_ROUTER_MATCH: '@APPLICATION/SET_ROUTER_MATCH'
